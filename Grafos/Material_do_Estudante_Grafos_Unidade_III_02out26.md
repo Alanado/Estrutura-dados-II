@@ -72,6 +72,34 @@ Considere:
 -   Graphviz;
 -   Google Colab com Python e NetworkX.
 
+### Resposta
+
+```mermaid
+graph LR
+  n1((1)) --- n2((2))
+  n1 --- n4((4))
+  n1 --- n5((5))
+  n2 --- n3((3))
+  n3 --- n4
+  n4 --- n4
+```
+
+- Número de vértices: **5**
+- Número de arestas: **6**
+- Ordem `|V|` = **5**
+- Tamanho `|E|` = **6**
+- Existe laço? **Sim**, a aresta `(4,4)` liga o vértice 4 a ele mesmo.
+
+| Vértice | Grau |
+|:---:|:---:|
+| 1 | 3 |
+| 2 | 2 |
+| 3 | 2 |
+| 4 | 4 (o laço conta 2) |
+| 5 | 1 |
+
+Conferência: soma dos graus = 3 + 2 + 2 + 4 + 1 = 12 = 2 × 6 arestas.
+
 ------------------------------------------------------------------------
 
 ## 4. Atividade 2 - Incidência e adjacência
@@ -88,13 +116,13 @@ Utilize o grafo construído na Atividade 1.
 
 ### Registro
 
-  Vértice   Vértices adjacentes   Arestas incidentes
-  --------- --------------------- --------------------
-  1                               
-  2                               
-  3                               
-  4                               
-  5                               
+| Vértice | Vértices adjacentes | Arestas incidentes |
+|:---:|:---:|:---:|
+| 1 | 2, 4, 5 | (1,2), (1,4), (1,5) |
+| 2 | 1, 3 | (1,2), (2,3) |
+| 3 | 2, 4 | (2,3), (3,4) |
+| 4 | 1, 3, 4 | (1,4), (3,4), (4,4) |
+| 5 | 1 | (1,5) |
 
 ### Plataformas
 
@@ -102,6 +130,12 @@ Utilize o grafo construído na Atividade 1.
 -   Graph Online;
 -   diagrams.net;
 -   quadro colaborativo indicado pela professora.
+
+### Resposta
+
+- **Vértices adjacentes (vizinhos):** 1 e 2 são adjacentes porque existe a aresta `(1,2)` ligando os dois.
+- **Vértices não adjacentes:** 2 e 5 não são adjacentes porque não existe a aresta `(2,5)`; nenhuma aresta liga diretamente esses vértices.
+- Observação: o vértice 4 é adjacente a ele mesmo por causa do laço `(4,4)`.
 
 ------------------------------------------------------------------------
 
@@ -136,6 +170,26 @@ Crie uma pequena rede de amizades entre essas pessoas.
 -   papel;
 -   Google Colab com NetworkX.
 
+### Resposta
+
+`V = {João, Carolina, Maria, Marco}`
+
+`E = {(João, Carolina), (João, Maria), (Carolina, Maria), (Maria, Marco)}`
+
+```mermaid
+graph LR
+  Joao((João)) --- Carolina((Carolina))
+  Joao --- Maria((Maria))
+  Carolina --- Maria
+  Maria --- Marco((Marco))
+```
+
+- **Tipo:** grafo **não dirigido**.
+- **Justificativa:** a amizade é uma relação recíproca: se João é amigo de Carolina, Carolina também é amiga de João. Por isso a aresta não precisa de sentido.
+- **Maior grau:** **Maria**, com grau 3 (João = 2, Carolina = 2, Marco = 1).
+
+**Reflexão:** os vértices representam as **pessoas** e as arestas representam as **relações de amizade** entre elas.
+
 ------------------------------------------------------------------------
 
 ## 6. Atividade 4 - Modelagem de ruas de mão única
@@ -163,6 +217,30 @@ mão única.
 -   Graph Online;
 -   Graphviz;
 -   Google Colab com NetworkX.
+
+### Resposta
+
+Cruzamentos: A, B, C e D. Cada rua de mão única é uma aresta dirigida (origem → destino).
+
+`V = {A, B, C, D}`
+
+`E = {(A,B), (B,C), (C,D), (D,A), (A,C)}`
+
+```mermaid
+graph LR
+  A((A)) --> B((B))
+  B --> C((C))
+  C --> D((D))
+  D --> A
+  A --> C
+```
+
+**Vértice escolhido: C**
+
+- Grau de entrada = **2** (chegam `(B,C)` e `(A,C)`)
+- Grau de saída = **1** (sai `(C,D)`)
+
+**Por que não usar grafo não dirigido?** Porque nele a aresta `{A,B}` vale nos dois sentidos, ou seja, indicaria que se pode ir de A para B e de B para A. Em ruas de mão única só um sentido é permitido, então é preciso um par **ordenado** `(u,v)`, em que `(A,B)` não equivale a `(B,A)`.
 
 ------------------------------------------------------------------------
 
