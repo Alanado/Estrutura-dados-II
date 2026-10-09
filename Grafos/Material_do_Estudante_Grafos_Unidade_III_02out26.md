@@ -74,15 +74,7 @@ Considere:
 
 ### Resposta
 
-```mermaid
-graph LR
-  n1((1)) --- n2((2))
-  n1 --- n4((4))
-  n1 --- n5((5))
-  n2 --- n3((3))
-  n3 --- n4
-  n4 --- n4
-```
+![Grafo da Atividade 1](atividade1.svg)
 
 - Número de vértices: **5**
 - Número de arestas: **6**
@@ -176,13 +168,7 @@ Crie uma pequena rede de amizades entre essas pessoas.
 
 `E = {(João, Carolina), (João, Maria), (Carolina, Maria), (Maria, Marco)}`
 
-```mermaid
-graph LR
-  Joao((João)) --- Carolina((Carolina))
-  Joao --- Maria((Maria))
-  Carolina --- Maria
-  Maria --- Marco((Marco))
-```
+![Grafo da Atividade 3](atividade3.svg)
 
 - **Tipo:** grafo **não dirigido**.
 - **Justificativa:** a amizade é uma relação recíproca: se João é amigo de Carolina, Carolina também é amiga de João. Por isso a aresta não precisa de sentido.
@@ -226,14 +212,7 @@ Cruzamentos: A, B, C e D. Cada rua de mão única é uma aresta dirigida (origem
 
 `E = {(A,B), (B,C), (C,D), (D,A), (A,C)}`
 
-```mermaid
-graph LR
-  A((A)) --> B((B))
-  B --> C((C))
-  C --> D((D))
-  D --> A
-  A --> C
-```
+![Grafo da Atividade 4](atividade4.svg)
 
 **Vértice escolhido: C**
 
