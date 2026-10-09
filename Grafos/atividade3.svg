@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="360" viewBox="0 0 580 360">
+<rect width="580" height="360" fill="#ffffff"/>
+<line x1="90" y1="80" x2="90" y2="280" stroke="#c7b7c7" stroke-width="4"/>
+<line x1="90" y1="80" x2="290" y2="180" stroke="#c7b7c7" stroke-width="4"/>
+<line x1="90" y1="280" x2="290" y2="180" stroke="#c7b7c7" stroke-width="4"/>
+<line x1="290" y1="180" x2="490" y2="180" stroke="#c7b7c7" stroke-width="4"/>
+<circle cx="90" cy="80" r="40" fill="#68aeba" stroke="#c7b7c7" stroke-width="2"/>
+<text x="90" y="80" fill="#f0d543" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" dominant-baseline="central">João</text>
+<circle cx="90" cy="280" r="40" fill="#68aeba" stroke="#c7b7c7" stroke-width="2"/>
+<text x="90" y="280" fill="#f0d543" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" dominant-baseline="central">Carolina</text>
+<circle cx="290" cy="180" r="40" fill="#68aeba" stroke="#c7b7c7" stroke-width="2"/>
+<text x="290" y="180" fill="#f0d543" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" dominant-baseline="central">Maria</text>
+<circle cx="490" cy="180" r="40" fill="#68aeba" stroke="#c7b7c7" stroke-width="2"/>
+<text x="490" y="180" fill="#f0d543" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" dominant-baseline="central">Marco</text>
+</svg>
